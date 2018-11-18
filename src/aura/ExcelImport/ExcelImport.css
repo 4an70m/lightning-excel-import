@@ -1,0 +1,18 @@
+.THIS.bigger-droppable-zone,
+.THIS.bigger-droppable-zone > .slds-form-element__control,
+.THIS.bigger-droppable-zone > .slds-form-element__control > .slds-file-selector,
+.THIS.bigger-droppable-zone > .slds-form-element__control > .slds-file-selector > .slds-file-selector__dropzone {
+    width: 100%;
+    height: 100%;
+}
+
+.THIS.bigger-droppable-zone .slds-file-selector__dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.THIS.dropapble-zone-loading {
+    cursor: not-allowed;
+    filter: blur(2px);
+}

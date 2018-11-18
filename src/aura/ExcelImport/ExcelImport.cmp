@@ -1,0 +1,55 @@
+<!--
+    MIT License
+
+    Copyright (c) 2018 Alex
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+ -->
+
+<aura:component description="Component to import .xlsx files in Lightning">
+
+    <ltng:require scripts="{!$Resource.ExcelImport}"/>
+    <aura:registerEvent name="onImport" type="c:ExcelImportEvent"/>
+
+    <aura:attribute name="label" type="String" description="Label for input" default="Import Excel File" required="false"/>
+    <aura:attribute name="class" type="String" description="Additional styles" required="false"/>
+    <aura:attribute name="variant" type="String" description="Input variant" required="false"/>
+    <aura:attribute name="required" type="Boolean" description="Shows if input is mandatory" default="false"/>
+    <aura:attribute name="disabled" type="Boolean" description="Displays input disabled" default="false"/>
+    <aura:attribute name="accept" type="String" default=".xls, .xlsx"/>
+
+    <aura:attribute name="stretchedDropzone" type="Boolean" description="Makes dropzone stetchable" default="false"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" access="private"/>
+
+    <aura:attribute name="fileSizeThreshold" type="Integer" description="Max file size in bytes, default 10mb" default="10000000" required="false"/>
+    <aura:attribute name="messageFileSizeExceeded" type="String" default="File size exceeded" required="false"/>
+    <aura:attribute name="messageNoFileSpecified" type="String" default="No file specified" required="false"/>
+
+    <lightning:input type="file"
+                     label="{!v.label}"
+                     class="{!(v.stretchedDropzonel ? 'bigger-droppable-zone ' : '')
+                        + (v.isLoading ? 'dropapble-zone-loading ' : '')
+                        + v.class}"
+                     variant="{!v.variant}"
+                     required="{!v.required}"
+                     disabled="{!v.disabled}"
+                     onchange="{!c.onTableImport}"
+                     multiple="false"
+                     accept="{!v.accept}"/>
+</aura:component>
