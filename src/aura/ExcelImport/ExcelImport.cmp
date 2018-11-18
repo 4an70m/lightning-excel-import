@@ -34,7 +34,7 @@
     <aura:attribute name="disabled" type="Boolean" description="Displays input disabled" default="false"/>
     <aura:attribute name="accept" type="String" default=".xls, .xlsx"/>
 
-    <aura:attribute name="stretchedDropzone" type="Boolean" description="Makes dropzone stetchable" default="false"/>
+    <aura:attribute name="stretchedDropzone" type="Boolean" description="Makes dropzone stretchable" default="false"/>
     <aura:attribute name="isLoading" type="Boolean" default="false" access="private"/>
 
     <aura:attribute name="fileSizeThreshold" type="Integer" description="Max file size in bytes, default 10mb" default="10000000" required="false"/>
@@ -43,9 +43,9 @@
 
     <lightning:input type="file"
                      label="{!v.label}"
-                     class="{!(v.stretchedDropzonel ? 'bigger-droppable-zone ' : '')
-                        + (v.isLoading ? 'dropapble-zone-loading ' : '')
-                        + v.class}"
+                     class="{!v.class
+                        + (v.stretchedDropzone ? ' bigger-drop-zone' : '')
+                        + (v.isLoading ? ' drop-zone-loading' : '')}"
                      variant="{!v.variant}"
                      required="{!v.required}"
                      disabled="{!v.disabled}"

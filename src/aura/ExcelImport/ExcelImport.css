@@ -1,18 +1,24 @@
-.THIS.bigger-droppable-zone,
-.THIS.bigger-droppable-zone > .slds-form-element__control,
-.THIS.bigger-droppable-zone > .slds-form-element__control > .slds-file-selector,
-.THIS.bigger-droppable-zone > .slds-form-element__control > .slds-file-selector > .slds-file-selector__dropzone {
+.THIS.bigger-drop-zone,
+.THIS.bigger-drop-zone > .slds-form-element__control,
+.THIS.bigger-drop-zone > .slds-form-element__control > .slds-file-selector,
+.THIS.bigger-drop-zone > .slds-form-element__control > .slds-file-selector > .slds-file-selector__dropzone {
     width: 100%;
     height: 100%;
 }
 
-.THIS.bigger-droppable-zone .slds-file-selector__dropzone {
+.THIS.bigger-drop-zone .slds-file-selector__dropzone {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.THIS.dropapble-zone-loading {
+.THIS.drop-zone-loading .slds-form-element__control {
+    filter: blur(1px);
+    transition: blur 1s;
+}
+.THIS.drop-zone-loading .slds-form-element__control * {
     cursor: not-allowed;
-    filter: blur(2px);
+}
+.THIS .slds-file-selector__text {
+    user-select: none;
 }
