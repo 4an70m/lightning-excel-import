@@ -26,5 +26,5 @@
     <aura:attribute type="String" name="type" description="Type of the event: SUCCESS, ERROR" required="true"/>
     <aura:attribute type="String" name="message" description="Message" required="false"/>
     <aura:attribute type="String" name="fileName" description="File name" required="false"/>
-    <aura:attribute type="String" name="table" description="Parsed Excel table" required="false"/>
+    <aura:attribute type="Object" name="table" description="Parsed Excel table" required="false"/>
 </aura:event>
