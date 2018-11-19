@@ -25,7 +25,7 @@ ExcelImport renders into a file [`lightning:input`](https://developer.salesforce
 | required                  | Boolean   | Yes           | Shows if input is mandatory               | false             |
 | disabled                  | Boolean   | Yes           | Disables the input                        | false             |
 | accept                    | String    | Yes           | Accepted file types                       | .xls, .xlsx       |
-| stretchedDropzone         | Boolean   | No            | Makes dropzone take all availablespace    | false             |
+| stretchedDropzone         | Boolean   | No            | Makes dropzone take all available space   | false             |
 | fileSizeThreshhold        | Integer   | No            | Max file size in bytes                    | 10000000          |
 | messageFileSizeExceeded   | String    | No            | File size exceeded message                | File size exceeded|
 | messageNoFileSpecified    | String    | No            | No file specified message                 | No file specified |
