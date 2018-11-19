@@ -38,7 +38,7 @@ ExcelImport renders into a file [`lightning:input`](https://developer.salesforce
 | type          | String    | Type of the event: SUCCESS, ERROR |
 | message       | String    | Message in case of error          |
 | fileName      | String    | Name of the imported file         |
-| table         | String    | Parsed Excel table see [XLSX.js](https://docs.sheetjs.com/#general-structures) docs for details |
+| table         | String    | Parsed Excel table, see [XLSX.js](https://docs.sheetjs.com/#general-structures) docs for details |
 
 To handle `onImport` event and get the parsed table object simply use event parameters:
 ```javascript
@@ -61,7 +61,7 @@ To handle `onImport` event and get the parsed table object simply use event para
 ## Todos
  - Make input support any type of file, processing tables only
  - Improve error handling
- - (?) change some of the attributes interface
+ - (?) change some of the attributes
 
 ## License
 MIT
