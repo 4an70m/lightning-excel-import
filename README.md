@@ -15,7 +15,7 @@ To use this component, simply include it in your markup and handle the import ev
 ```
 ExcelImport renders into a file [`lightning:input`](https://developer.salesforce.com/docs/component-library/bundle/lightning:input/example#lightningcomponentdemo:exampleInputFile) component with additional handling for Excel table files.
 
-##Supported attributes
+## Supported attributes
 
 | Attribute                 | Type      | Inherited?    | Description                               | Default Value     |
 | -                         | :-        | :-:           | :-| -|
@@ -29,6 +29,34 @@ ExcelImport renders into a file [`lightning:input`](https://developer.salesforce
 | fileSizeThreshhold        | Integer   | No            | Max file size in bytes                    | 10000000          |
 | messageFileSizeExceeded   | String    | No            | File size exceeded message                | File size exceeded|
 | messageNoFileSpecified    | String    | No            | No file specified message                 | No file specified |
+
+## Event handling
+`onImport` event is a component-level event, which has this attributes:
+
+| Attribute     | Type      | Description                       |
+| -             | :-        | :-                                | 
+| type          | String    | Type of the event: SUCCESS, ERROR |
+| message       | String    | Message in case of error          |
+| fileName      | String    | Name of the imported file         |
+| table         | String    | Parsed Excel table see [XLSX.js](https://docs.sheetjs.com/#general-structures) docs for details |
+
+To handle `onImport` event and get the parsed table object simply use event parameters:
+```javascript
+{
+    ...
+    myImportHandlingFunction: function(component, event, helper) {
+        let eventType = event.getParam("type");
+        if (eventType === "SUCCESS") {
+            console.log(event.getParam("fileName"));
+            console.log(event.getParam("table"));
+        }
+        if (eventType === "ERROR") {
+            console.log(event.getParam("message"));
+        }
+    }
+    ...
+})
+```
 
 ## Todos
  - Make input support any type of file, processing tables only
