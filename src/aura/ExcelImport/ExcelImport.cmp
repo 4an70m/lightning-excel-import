@@ -29,7 +29,7 @@
 
     <aura:attribute name="label" type="String" description="Label for input" default="Import Excel File" required="false"/>
     <aura:attribute name="class" type="String" description="Additional styles" required="false"/>
-    <aura:attribute name="variant" type="String" description="Input variant" required="false"/>
+    <aura:attribute name="variant" type="String" description="Input variant" required="false" default="standard"/>
     <aura:attribute name="required" type="Boolean" description="Shows if input is mandatory" default="false"/>
     <aura:attribute name="disabled" type="Boolean" description="Displays input disabled" default="false"/>
     <aura:attribute name="accept" type="String" default=".xls, .xlsx"/>
